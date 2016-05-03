@@ -12,7 +12,7 @@ public final class NumberUtil {
 	 * @param value input string
 	 * @return boolean
 	 */
-	public static boolean isNumber(String value) {
+	public static final boolean isNumber(String value) {
 		if (StringUtil.isEmpty(value)) {
 			return false;
 		}
@@ -25,7 +25,7 @@ public final class NumberUtil {
 	 * @param value input string
 	 * @return boolean
 	 */
-	public static boolean isInteger(String value) {
+	public static final boolean isInteger(String value) {
 		return isNumber(value) && !value.contains(DECIMAL_SYMBOL);
 	}
 
@@ -35,7 +35,7 @@ public final class NumberUtil {
 	 * @param value input string
 	 * @return boolean
 	 */
-	public static boolean isFloat(String value) {
+	public static final boolean isFloat(String value) {
 		return isNumber(value) && value.contains(DECIMAL_SYMBOL);
 	}
 }

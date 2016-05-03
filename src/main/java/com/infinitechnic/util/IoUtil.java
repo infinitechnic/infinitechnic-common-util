@@ -14,7 +14,7 @@ public class IoUtil {
 	 * @return A list of File objects
 	 * @see java.io.File
 	 */
-	private static List<File> listFilesForFolder(final File folder, final boolean recursive, final int level) {
+	private static final List<File> listFilesForFolder(final File folder, final boolean recursive, final int level) {
 		List<File> files = new ArrayList<File>();
 
 		if (folder.isDirectory()) {
@@ -38,7 +38,7 @@ public class IoUtil {
 	 * @return A list of File objects
 	 * @see java.io.File
 	 */
-	public static List<File> listFilesForFolder(final File folder, final boolean recursive) {
+	public static final List<File> listFilesForFolder(final File folder, final boolean recursive) {
 		return listFilesForFolder(folder, recursive, -1);
 	}
 
@@ -50,7 +50,7 @@ public class IoUtil {
 	 * @return A list of File objects
 	 * @see java.io.File
 	 */
-	public static List<File> listFilesForFolder(final File folder, final int level) {
+	public static final List<File> listFilesForFolder(final File folder, final int level) {
 		return listFilesForFolder(folder, true, level);
 	}
 }
