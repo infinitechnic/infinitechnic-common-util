@@ -2,22 +2,26 @@ package com.infinitechnic.util;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Collection;
+
 public final class StringUtil {
 	private static final String EMPTY_STRING = "";
 
-	public static boolean isEmpty(String str) {
+	public static final boolean isEmpty(String str) {
 		return StringUtils.isEmpty(str);
 	}
-	
-	public static String toString(Object obj) {
+
+	/**
+	 * This function returns the string by default calling toString() function
+	 * If the input object is null, it returns empty string instead of null
+	 * @param obj
+	 * @return String
+     */
+	public static final String toString(Object obj) {
 		if (obj == null) {
-			return null;
+			return EMPTY_STRING;
 		}
 		return obj.toString();
-	}
-
-	public static int countMatches(String str, String find) {
-		return (str == null || find == null || find.length() == 0 || str.length() < find.length()) ? 0 : str.length() - str.replace(find, "").length() / find.length();
 	}
 
 	/**
@@ -25,7 +29,7 @@ public final class StringUtil {
 	 * @param objects
 	 * @return String
 	 */
-	public static String concat(Object... objects) {
+	public static final String concat(Object... objects) {
 		if (objects == null) {
 			return EMPTY_STRING;
 		}
@@ -37,5 +41,27 @@ public final class StringUtil {
 			}
 		}
 		return sb.toString();
+	}
+
+	/**
+	 * This concatenate function treats null object as empty string
+	 * It appends a delimiter between two objects
+	 * @param objects
+	 * @param delimiter
+     * @return String
+     */
+	public static final String concatWithDelimiter(Collection<?> objects, String delimiter) {
+		StringBuilder sb = new StringBuilder();
+		objects.stream().forEach(o -> {
+			if (sb.length() != 0) {
+				sb.append(delimiter);
+			}
+			sb.append(toString(o));
+		});
+		return sb.toString();
+	}
+
+	public static final int countMatches(String str, String find) {
+		return (str == null || find == null || find.length() == 0 || str.length() < find.length()) ? 0 : str.length() - str.replace(find, "").length() / find.length();
 	}
 }
