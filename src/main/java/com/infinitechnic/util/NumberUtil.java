@@ -38,4 +38,16 @@ public final class NumberUtil {
 	public static final boolean isFloat(String value) {
 		return isNumber(value) && value.contains(DECIMAL_SYMBOL);
 	}
+
+	/**
+	 * This function parse the string value to integer, if invalid integer format, it returns null
+	 * @param value Input value
+	 * @return Integer
+     */
+	public static final Integer parseInteger(String value) {
+		if (isInteger(value)) {
+			return Integer.parseInt(value);
+		}
+		return null;
+	}
 }

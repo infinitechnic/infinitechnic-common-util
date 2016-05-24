@@ -47,4 +47,8 @@ public class DateUtil {
             }
         }
     }
+
+    public static final String format(Date date, String format) {
+        return format(date, format, null);
+    }
 }
