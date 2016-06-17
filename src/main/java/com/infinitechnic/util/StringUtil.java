@@ -64,4 +64,8 @@ public final class StringUtil {
 	public static final int countMatches(String str, String find) {
 		return (str == null || find == null || find.length() == 0 || str.length() < find.length()) ? 0 : str.length() - str.replace(find, "").length() / find.length();
 	}
+
+	public static final String leftPad(String str, int size, String padStr) {
+		return StringUtils.leftPad(str, size, padStr);
+	}
 }

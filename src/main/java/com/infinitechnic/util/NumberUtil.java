@@ -2,7 +2,7 @@ package com.infinitechnic.util;
 
 
 public final class NumberUtil {
-	private final static String NUMBER_PATTERN = "^[-+]*[0-9]{1,3}(,[0-9]{3})*(\\.[0-9]+){0,1}$|^[-+]*[0-9]+(\\.[0-9]+){0,1}";
+	private final static String NUMBER_PATTERN = "^[-]{0,1}[0-9]{1,3}(,[0-9]{3})*(\\.[0-9]+){0,1}$|^[-]{0,1}[0-9]+(\\.[0-9]+){0,1}$";
 	private final static String DECIMAL_SYMBOL = ".";
 
 
