@@ -4,6 +4,7 @@ package com.infinitechnic.util;
 public final class NumberUtil {
 	private final static String NUMBER_PATTERN = "^[-]{0,1}[0-9]{1,3}(,[0-9]{3})*(\\.[0-9]+){0,1}$|^[-]{0,1}[0-9]+(\\.[0-9]+){0,1}$";
 	private final static String DECIMAL_SYMBOL = ".";
+	private final static String THOUSAND_SEPARATOR = ",";
 
 
 	/**
@@ -46,6 +47,9 @@ public final class NumberUtil {
      */
 	public static final Integer parseInteger(String value) {
 		if (isInteger(value)) {
+			if (value.contains(THOUSAND_SEPARATOR)) {
+				value = value.replace(THOUSAND_SEPARATOR, "");
+			}
 			return Integer.parseInt(value);
 		}
 		return null;
