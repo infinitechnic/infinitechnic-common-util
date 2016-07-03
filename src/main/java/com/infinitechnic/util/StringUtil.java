@@ -14,7 +14,7 @@ public final class StringUtil {
 	/**
 	 * This function returns the string by default calling toString() function
 	 * If the input object is null, it returns empty string instead of null
-	 * @param obj
+	 * @param obj Input Object
 	 * @return String
      */
 	public static final String toString(Object obj) {
@@ -26,7 +26,7 @@ public final class StringUtil {
 
 	/**
 	 * This concatenate function treats null object as empty string
-	 * @param objects
+	 * @param objects Input Object
 	 * @return String
 	 */
 	public static final String concat(Object... objects) {
@@ -46,8 +46,8 @@ public final class StringUtil {
 	/**
 	 * This concatenate function treats null object as empty string
 	 * It appends a delimiter between two objects
-	 * @param objects
-	 * @param delimiter
+	 * @param objects Input Object
+	 * @param delimiter Delimiter
      * @return String
      */
 	public static final String concatWithDelimiter(Collection<?> objects, String delimiter) {
@@ -63,5 +63,9 @@ public final class StringUtil {
 
 	public static final int countMatches(String str, String find) {
 		return (str == null || find == null || find.length() == 0 || str.length() < find.length()) ? 0 : str.length() - str.replace(find, "").length() / find.length();
+	}
+
+	public static final String leftPad(String str, int size, String padStr) {
+		return StringUtils.leftPad(str, size, padStr);
 	}
 }
